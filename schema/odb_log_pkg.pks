@@ -16,9 +16,6 @@ as
   
   procedure set_tail_id(p_value in number);
   procedure set_current_id(p_value in number);
-  
-  --function get_partition_start_id(p_partition_offset in integer default 0) return integer;
-  --function get_table_partitons return odb_log_partition_tbl pipelined;
 
 end;
 /

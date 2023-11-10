@@ -1,5 +1,5 @@
--- Log evaluation view for PTO_LOG table
--- this selects entries from the g_current_id in log_pkg
+-- Log evaluation view for ODB_LOG table
+-- this selects entries from the g_current_id in odb_log_pkg
 -- g_current_id is not automatically updated, new log entries add to the already selected
 create or replace force view odb_log_current as
 select

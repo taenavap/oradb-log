@@ -13,6 +13,11 @@ as
   --    instrumentation API declaration
   --    package logic
   --    instrumentation API implementation
+  --
+  -- default development level is DBG
+  -- do not call levels ERR to DBG in a loop!
+  -- use log function B in an explicit if...then wrapper when calling in a loop
+
 
   -- package log level variable
   g_log_level pls_integer := 0;
@@ -25,9 +30,12 @@ as
   WARN        boolean;      -- level >= 2   production:   notices about anomalies
   ERR         boolean;      -- level >= 1   production:   plsql exception logging
 
+
+
   -- A: non-loop log function
   -- log level is the first parameter of the call:
-  -- log(DBG, 'log message');
+  --    log(DBG, 'log message');
+  -- use with log level DBG INFO WARN ERR
   procedure log(
      p_log in boolean
     ,p_text in varchar2
@@ -36,8 +44,8 @@ as
 
   -- B: loop log function
   -- log level is tested outside log call in an if ... then wrapper:
-  -- if TRACE then log('log message');
-  -- end if;
+  --    if TRACE then log('log message');
+  --    end if;
   -- can be used also to build a complex log message with extra logic
   procedure log(
      p_text in varchar2

@@ -1,5 +1,5 @@
--- Log evaluation view for PTO_LOG table
--- this selects PTO_LOG entries starting from g_tail_id in pto_log package
+-- Log evaluation view for ODB_LOG table
+-- this selects ODB_LOG entries starting from g_tail_id in odb_log_pkg package
 -- every access to g_tail_id updates it to the current last value
 create or replace force view odb_log_tail as
 select
